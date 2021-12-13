@@ -16,7 +16,7 @@
     </div>
 
     <button class="tablink" onclick="window.location.href='manage_workers.php'" id="defaultOpen">MANAGE WORKERS</button>
-    <button class="tablink" onclick="openCity('Paris', this, 'green')">GENERATE PAYROLL</button>
+    <button class="tablink" onclick="window.location.href='generate_payroll.php'">GENERATE PAYROLL</button>
     <button class="tablink" onclick="openCity('Tokyo', this, 'blue')">GENERATE CHECK</button>
     <button class="tablink" onclick="window.location.href='about.php'">ABOUT</button>
 

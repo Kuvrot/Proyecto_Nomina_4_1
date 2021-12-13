@@ -61,16 +61,17 @@
       $isr = 0.25 * $net_wage - $ss - $afore - $vi;
     }
 
-
      ?>
       <table border = "1px" style = "text-align:center; width:100%;">
         <thead>
           <th>Nombre</th>
           <th>Fecha</th>
+          <th>Horas</th>
         </thead>
         <thead>
           <th><?php echo $n; ?></th>
           <th><?php echo $f; ?></th>
+          <th><?php echo $h;?></th>
         </thead>
         <thead>
           <th>Abono</th>
@@ -130,10 +131,20 @@
         </tbody>
       </table>
 
+      <table border="1px">
+        <thead>
+          <th style="text-align:left; padding:60px;">Fecha: <?php echo $f; ?> Pagar  a <?php echo $n ?>la cantidad de <?php echo $net_wage - ($ss + $afore + $vi + $isr); ?> USD </th>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align:left; padding:60px;" >El empleador</td>
+          </tr>
+        </tbody>
+      </table>
+
       <div class="s">
         <button onclick="window.print()">Print or download PDF</button>
-        <button onclick="window.location.href = 'manage_workers.php'">Back</button>
-        <button class="tablink" onclick="window.location.href='index.php'">BACK</button>
+        <button onclick="window.location.href = 'index.php'">Back</button>
       </div>
 
   </body>

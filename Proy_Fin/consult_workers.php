@@ -8,7 +8,7 @@
   <body>
 
     <?php $conn = new  mysqli("localhost" , "root" , "superman" , "business_1" );
-          $data = $conn->query("Select * from workers");?>
+          $data = $conn->query("SELECT * FROM workers , worker_wage where id = worker_id ORDER BY apellido_paterno; ");?>
 
   <div class="workers">
     <table border="1px">
@@ -18,15 +18,17 @@
         <th>Apellido Paterno</th>
         <th>Apellido Materno</th>
         <th>Worked Hours</th>
+        <th>Wage per hour</th>
       </thead>
       <tbody>
         <?php while ($w = mysqli_fetch_array($data)) { ?>
         <tr>
             <td> <?php echo $w['id']; ?></td>
-            <td> <?php echo $w['nombre']; ?></td>
             <td> <?php echo $w['apellido_paterno']; ?></td>
             <td> <?php echo $w['apellido_materno']; ?></td>
+            <td> <?php echo $w['nombre']; ?></td>
             <td> <?php echo $w['work_hours']; ?></td>
+            <td> <?php echo $w['normal_hour']; ?></td>
         </tr>
         <?php } ?>
       </tbody>

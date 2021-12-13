@@ -12,7 +12,7 @@
           <input type="text" name="id" placeholder="Worker ID">
           <input type="text" name="f" placeholder="Date">
 
-          <input type="submit" name="s" value="CREATE">
+          <input type="submit" name="s" value="GENERATE">
 
         </form>
       </div>

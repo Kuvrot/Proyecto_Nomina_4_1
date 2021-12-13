@@ -6,7 +6,6 @@
     <style >
     body {background : #0AA1F0;}
     </style>
-
     <link rel="stylesheet" href="style.css">
 
 

@@ -35,9 +35,15 @@
     <title></title>
   </head>
   <body>
+
+    <div class="s">
+      <button onclick="window.print()">Print or download PDF</button>
+      <button onclick="window.location.href = 'index.php'">Back</button>
+    </div>
+
     <?php
     $conn = new mysqli("localhost" , "root" , "superman" , "business_1");
-    $data = $conn->query("SELECT * from workers;");
+    $data = $conn->query("SELECT * from workers order by apellido_paterno;");
     $wa =   $conn->query("SELECT * from worker_wage , workers WHERE worker_id = id;");
 
   while ($t = mysqli_fetch_array($data)){
@@ -83,10 +89,12 @@
         <thead>
           <th>Nombre</th>
           <th>Fecha</th>
+          <th>Horas</th>
         </thead>
         <thead>
           <th><?php echo $n; ?></th>
           <th><?php echo $f; ?></th>
+          <th><?php echo $h; ?></th>
         </thead>
         <thead>
           <th>Abono</th>
@@ -146,12 +154,18 @@
         </tbody>
       </table>
 
-    <?php } ?>
+      <table border="1px" style="margin-bottom: 50%;">
+        <thead>
+          <th style="text-align:left; padding:60px;"> Pagar  a <?php echo "$n " ?>la cantidad de <?php echo $net_wage - ($ss + $afore + $vi + $isr); ?> USD </th>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align:left; padding:60px;" >El empleador</td>
+          </tr>
+        </tbody>
+      </table>
 
-      <div class="s">
-        <button onclick="window.print()">Print or download PDF</button>
-        <button onclick="window.location.href = 'manage_workers.php'">Back</button>
-      </div>
+    <?php } ?>
 
   </body>
 </html>

@@ -36,24 +36,25 @@
   </head>
   <body>
     <?php
-
-    $id = $_POST['id'];
-    $f = $_POST['f'];
-    $w = 12.5;
     $conn = new mysqli("localhost" , "root" , "superman" , "business_1");
-    $data = $conn->query("SELECT * from workers WHERE id = '$id';");
+    $data = $conn->query("SELECT * from workers;");
     $wa =   $conn->query("SELECT * from worker_wage , workers WHERE worker_id = id;");
 
-    while ($t = mysqli_fetch_array($data)) {
+  while ($t = mysqli_fetch_array($data)){
 
-        $n = $t ['apellido_paterno']; $n .= " "; $n .= $t['apellido_materno'];  $n .= " "; $n .=  $t['nombre'];
-        $h = $t ['work_hours'];
-    }
 
-    while ($d = mysqli_fetch_array($wa)) {
+    $id = $t ['id'];
+    $f = "NA";
 
-        $w = $d ['normal_hour'];
-    }
+
+    $n = $t ['apellido_paterno']; $n .= " "; $n .= $t['apellido_materno'];  $n .= " "; $n .=  $t['nombre'];
+    $h = $t ['work_hours'];
+
+    while ($d = mysqli_fetch_array($wa)){
+
+    $w = $d ['normal_hour'];
+  }
+
 
 
     $isr = 0;
@@ -67,13 +68,13 @@
     }
 
     $ss = $net_wage * 0.075;
-    $afore =  $net_wage * 0.065 - $ss;
-    $vi = $net_wage * 0.05 - $ss - $afore;
+    $afore =  abs($net_wage * 0.065 - $ss);
+    $vi = abs($net_wage * 0.05 - $ss - $afore);
 
     if ($net_wage > 1000){
-      $isr = 0.33 * $net_wage - $ss - $afore - $vi;
+      $isr = abs(0.33 * $net_wage - $ss - $afore - $vi);
     }else{
-      $isr = 0.25 * $net_wage - $ss - $afore - $vi;
+      $isr = abs(0.25 * $net_wage - $ss - $afore - $vi);
     }
 
 
@@ -144,6 +145,8 @@
           </tr>
         </tbody>
       </table>
+
+    <?php } ?>
 
       <div class="s">
         <button onclick="window.print()">Print or download PDF</button>

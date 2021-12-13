@@ -14,7 +14,7 @@
           <input type="number" name="w" value="Salario por hora">
           <input type="number" name="h" placeholder="Horas de trabajo">
 
-          <input type="submit" name="s" value="CREATE">
+          <input type="submit" name="s" value="GENERATE">
 
         </form>
       </div>

@@ -20,7 +20,7 @@
     <button class="tablink" onclick="openCity('Tokyo', this, 'blue')">GENERATE CHECK</button>
     <button class="tablink" onclick="window.location.href='about.php'">ABOUT</button>
 
-    <h2 style = "text-align:center;">This proyect has been uploaded to GitHub , click <a href = "https://github.com/Kuvrot/Proyecto_Nomina_4_1"> here </a> to see </h2>
+    <h2 style = "text-align:center;">This proyect has been uploaded to GitHub  under GPL 3.0 license, click <a href = "https://github.com/Kuvrot/Proyecto_Nomina_4_1"> here </a> to see </h2>
 
   </body>
 </html>

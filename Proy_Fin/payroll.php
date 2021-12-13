@@ -2,19 +2,17 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <script type="text/javascript">
-    function imprSelec(nombre)
-    {
-      var ficha = document.getElementById(nombre);
-      var ventimp = window.open(' ', 'popimpr');
-      ventimp.document.write( ficha.innerHTML );
-      ventimp.document.close();
-      ventimp.print( );
-      ventimp.close();
-    }
-    </script>
 
     <style media="screen">
+
+    @media print {
+
+       button{
+         visibility: hidden;
+          display: none;
+       }
+    }
+
     button {
       background-color: #555;
       color: white;
@@ -30,6 +28,9 @@
     button:hover{
         background-color: #706f6f;
     }
+
+
+
     </style>
     <title></title>
   </head>
@@ -129,8 +130,11 @@
         </tbody>
       </table>
 
-      <button class="tablink" onclick="window.print()">Print or download PDF</button>
-      <button class="tablink" onclick="window.location.href = 'manage_workers.php'">Back</button>
+      <div class="s">
+        <button onclick="window.print()">Print or download PDF</button>
+        <button onclick="window.location.href = 'manage_workers.php'">Back</button>
+        <button class="tablink" onclick="window.location.href='index.php'">BACK</button>
+      </div>
 
   </body>
 </html>

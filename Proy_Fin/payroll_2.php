@@ -2,19 +2,17 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <script type="text/javascript">
-    function imprSelec(nombre)
-    {
-      var ficha = document.getElementById(nombre);
-      var ventimp = window.open(' ', 'popimpr');
-      ventimp.document.write( ficha.innerHTML );
-      ventimp.document.close();
-      ventimp.print( );
-      ventimp.close();
-    }
-    </script>
 
     <style media="screen">
+
+    @media print {
+
+       .s{
+         visibility: hidden;
+          display: none;
+       }
+    }
+
     button {
       background-color: #555;
       color: white;
@@ -30,15 +28,33 @@
     button:hover{
         background-color: #706f6f;
     }
+
+
+
     </style>
     <title></title>
   </head>
   <body>
     <?php
-    $n = $_POST['n'];
+
+    $id = $_POST['id'];
     $f = $_POST['f'];
-    $w = $_POST['w'];
-    $h = $_POST['h'];
+    $w = 12.5;
+    $conn = new mysqli("localhost" , "root" , "superman" , "business_1");
+    $data = $conn->query("SELECT * from workers WHERE id = '$id';");
+    $wa =   $conn->query("SELECT * from worker_wage , workers WHERE worker_id = id;");
+
+    while ($t = mysqli_fetch_array($data)) {
+
+        $n = $t ['apellido_paterno']; //+ $t['apellido_materno'] + $t['nombre'];
+        $h = $t ['work_hours'];
+    }
+
+    while ($d = mysqli_fetch_array($wa)) {
+
+        $w = $d ['normal_hour'];
+    }
+
 
     $isr = 0;
 
@@ -129,8 +145,10 @@
         </tbody>
       </table>
 
-      <button class="tablink" onclick="window.print()">Print or download PDF</button>
-      <button class="tablink" onclick="window.location.href = 'manage_workers.php'">Back</button>
+      <div class="s">
+        <button onclick="window.print()">Print or download PDF</button>
+        <button onclick="window.location.href = 'manage_workers.php'">Back</button>
+      </div>
 
   </body>
 </html>

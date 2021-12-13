@@ -8,11 +8,9 @@
   <body>
 
       <div class="formulario">
-        <form class="" action="payroll.php" method="post">
-          <input type="text" name="n" placeholder="Nombre completo por apellidos">
-          <input type="text" name="f" placeholder="Fecha">
-          <input type="number" name="w" value="Salario por hora">
-          <input type="number" name="h" placeholder="Horas de trabajo">
+        <form class="" action="payroll_2.php" method="post">
+          <input type="text" name="id" placeholder="Worker ID">
+          <input type="text" name="f" placeholder="Date">
 
           <input type="submit" name="s" value="CREATE">
 

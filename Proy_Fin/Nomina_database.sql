@@ -15,6 +15,8 @@ create table worker_wage (
 
 );
 
+
+
 insert into workers (nombre , apellido_paterno, apellido_materno , work_hours) values ("Jorge" , "El" , "Curioso" , 40) , ("Jheronimus" , "Van" , "Aken" , 40) , ("Francisco" , "de Goya" , " y Lucientes" , 40),
 ("Payaso" , "Bailarin" , "II" , 41) , ("Marco Aurelio" , "Roma" , "Invicta" , 60) , ("Diego" , "Rodrigo" , "Velazquez" , 42) , ("Manuel Maria" , "Ponce" , "Cuellar" , 50) , ("Macedonio" , "Alcala" , "Prieto" , 45);
 

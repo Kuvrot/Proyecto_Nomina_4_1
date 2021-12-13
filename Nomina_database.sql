@@ -11,7 +11,7 @@ id int auto_increment , nombre varchar(50) , apellido_paterno varchar(50), apell
 
 create table worker_wage (
 
-	worker_id int , normal_hour float , extra_hour float 
+	worker_id int auto_increment , normal_hour float , extra_hour float , primary key (worker_id)
 
 );
 

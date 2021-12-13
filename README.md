@@ -1,4 +1,4 @@
-# Proyecto_Nomina_4_1
+# Proyecto_Nomina_4_2
 4_2 Proyecto de asignatura: Nómina
 
 Los requerimientos para el proyecto de asignatura son:
